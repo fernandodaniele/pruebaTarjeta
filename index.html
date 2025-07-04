@@ -1,77 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<title>Tarjeta Regalo</title>
-<style>
-  body, html {
-    margin: 0; padding: 0; height: 100%;
-    font-family: Arial, sans-serif;
-    color: white;
-  }
-  .pantalla {
-    display: none;
-    height: 100vh;
-    width: 100vw;
-    background-size: cover;
-    background-position: center;
-    padding: 2rem;
-    box-sizing: border-box;
-  }
-  .visible {
-    display: block;
-  }
-  .overlay {
-    background: rgba(0,0,0,0.5);
-    height: 100%;
-    padding: 2rem;
-  }
-  button {
-    background: #ff4081;
-    border: none;
-    padding: 1rem 2rem;
-    margin: 1rem 0;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border-radius: 8px;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <title>Sofi 31</title>
+  <style>
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+    .pantalla {
+      display: none;
+      height: 100vh;
+      width: 100vw;
+      background-size: cover;
+      background-position: center;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+    .visible {
+      display: block;
+    }
+    .overlay {
+      background: rgba(0,0,0,0.6);
+      height: 100%;
+      padding: 2rem;
+    }
+    button, a.btn {
+      background: #ff4081;
+      border: none;
+      padding: 1rem 2rem;
+      margin: 1rem 0;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
 
-<div id="pantalla1" class="pantalla visible" style="background-image: url('images/fondo1.jpg');">
+<!-- Pantalla de inicio -->
+<div id="pantallaInicio" class="pantalla" style="background-image: url('images/fondo1.jpg');">
   <div class="overlay">
-    <h1>Feliz cumpleaños mi chica!! 💖</h1>
-    <p>Elegí una opción</p>
-    <button onclick="mostrarPantalla(2)">Viaje</button>
-    <button onclick="mostrarPantalla(3)">Relax</button>
+    <h1>Feliz cumpleaños mi chica! 💖</h1>
+    <p>Elegí una opción, pero ojo, una vez elegida no hay vuelta atrás 😉:</p>
+    <button onclick="elegirOpcion(1)">Lágrimas grabadas en surcos</button>
+    <button onclick="elegirOpcion(2)">La fruta prohibida</button>
+    <button onclick="elegirOpcion(3)">Levantate y anda</button>
   </div>
 </div>
 
-<div id="pantalla2" class="pantalla" style="background-image: url('images/fondo2.jpg');">
+<!-- Pantallas intermedias -->
+<div id="intermedia1" class="pantalla" style="background-image: url('images/fondo2.jpg');">
   <div class="overlay">
-    <h1>Opción 1</h1>
-    <p>Gracias por elegir esta opción. Aquí está tu regalo:</p>
-    <a href="https://link-regalo1.com" target="_blank" style="color:#ff4081;">Ir al regalo</a><br>
-    <button onclick="mostrarPantalla(1)">Volver</button>
+    <h1>Antes de ver tu regalo...</h1>
+    <p>Te dejo esto que te debía:</p>
+    <a class="btn" href="https://o365sanfranciscoutneduar-my.sharepoint.com/:f:/g/personal/fdaniele_facultad_sanfrancisco_utn_edu_ar/ErXTrHWhvS1JhQyx1vA2iLgBnpwsoYf3rIhX5wzHNzQp9w?e=tir6SP" target="_blank">Verlo 💌</a><br>
+    <button onclick="mostrarFinal(1)">Ver el regalo 🎁</button>
   </div>
 </div>
 
-<div id="pantalla3" class="pantalla" style="background-image: url('images/fondo3.jpg');">
+<div id="intermedia2" class="pantalla" style="background-image: url('images/fondo2.jpg');">
   <div class="overlay">
-    <h1>Opción 2</h1>
-    <p>Gracias por elegir esta opción. Aquí está tu regalo:</p>
-    <a href="https://link-regalo2.com" target="_blank" style="color:#ff4081;">Ir al regalo</a><br>
-    <button onclick="mostrarPantalla(1)">Volver</button>
+    <h1>Antes de ver tu regalo...</h1>
+    <p>Te dejo esto que te debía:</p>
+    <a class="btn" href="https://o365sanfranciscoutneduar-my.sharepoint.com/:f:/g/personal/fdaniele_facultad_sanfrancisco_utn_edu_ar/ErXTrHWhvS1JhQyx1vA2iLgBnpwsoYf3rIhX5wzHNzQp9w?e=tir6SP" target="_blank">Verlo 💌</a><br>
+    <button onclick="mostrarFinal(2)">Ver el regalo 🎁</button>
+  </div>
+</div>
+
+<div id="intermedia3" class="pantalla" style="background-image: url('images/fondo2.jpg');">
+  <div class="overlay">
+    <h1>Antes de ver tu regalo...</h1>
+    <p>Te dejo esto que te debía:</p>
+    <a class="btn" href="https://o365sanfranciscoutneduar-my.sharepoint.com/:f:/g/personal/fdaniele_facultad_sanfrancisco_utn_edu_ar/ErXTrHWhvS1JhQyx1vA2iLgBnpwsoYf3rIhX5wzHNzQp9w?e=tir6SP" target="_blank">Verlo 💌</a><br>
+    <button onclick="mostrarFinal(3)">Ver el regalo 🎁</button>
+  </div>
+</div>
+
+<!-- Pantallas finales -->
+<div id="final1" class="pantalla" style="background-image: url('images/fondo3.jpg');">
+  <div class="overlay">
+    <h1>Tu regalo 🎁</h1>
+    <p>¡Prepará la tarjeta!</p>
+    <a class="btn" href="https://www.amazon.it/s?k=taylor+swift+vinili&crid=1F5KEPRMYGR9V&sprefix=taylor+swift+v%2Caps%2C236&ref=nb_sb_ss_mvt-t11-ranker_1_14" target="_blank">Lo quiero ya</a>
+  </div>
+</div>
+
+<div id="final2" class="pantalla" style="background-image: url('images/fondo3.jpg');">
+  <div class="overlay">
+    <h1>Tu regalo 🎁</h1>
+    <p>¡Prepará la tarjeta!</p>
+    <a class="btn" href="https://www.amazon.it/s?k=iphone&crid=3KZL8UHD9M8YJ&sprefix=Iphone%2Caps%2C208&ref=nb_sb_ss_mvt-t11-ranker_5_6" target="_blank">Lo quiero ya</a>
+  </div>
+</div>
+
+<div id="final3" class="pantalla" style="background-image: url('images/fondo3.jpg');">
+  <div class="overlay">
+    <h1>Tu regalo 🎁</h1>
+    <p>¡Prepará la tarjeta!</p>
+    <a class="btn" href="https://www.amazon.it/s?k=monopattino+elettrico&crid=22PYSVX1I6545&sprefix=monop%2Caps%2C216&ref=nb_sb_ss_mvt-t11-ranker_ci_hl-bn-left_1_5" target="_blank">Lo quiero ya</a>
   </div>
 </div>
 
 <script>
-  function mostrarPantalla(num) {
+  function ocultarTodas() {
     document.querySelectorAll('.pantalla').forEach(p => p.classList.remove('visible'));
-    document.getElementById('pantalla'+num).classList.add('visible');
   }
+
+  function elegirOpcion(num) {
+    if (localStorage.getItem("opcionElegida")) return; // evita doble click
+    localStorage.setItem("opcionElegida", num);
+    ocultarTodas();
+    document.getElementById("intermedia" + num).classList.add("visible");
+  }
+
+  function mostrarFinal(num) {
+    ocultarTodas();
+    document.getElementById("final" + num).classList.add("visible");
+  }
+
+  // Al cargar la página
+  window.onload = function() {
+    const elegida = localStorage.getItem("opcionElegida");
+    if (elegida) {
+      // Si ya eligió, no mostrar inicio
+      ocultarTodas();
+      document.getElementById("intermedia" + elegida).classList.add("visible");
+    } else {
+      document.getElementById("pantallaInicio").classList.add("visible");
+    }
+
+    // Evita volver atrás con el botón del navegador
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+      history.go(1);
+    };
+  };
 </script>
 
 </body>
