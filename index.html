@@ -41,7 +41,10 @@
   </style>
 </head>
 <body>
-
+ <audio id="bg-music" controls autoplay loop>
+  <source src="musica.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio HTML5.
+  </audio> 
 <!-- Pantalla de inicio -->
 <div id="pantallaInicio" class="pantalla" style="background-image: url('images/fondo1.jpg');">
   <div class="overlay">
@@ -141,6 +144,16 @@
     };
   };
 </script>
-
+<script>
+    function iniciarPagina() {
+      const audio = document.getElementById('bg-music');
+      audio.volume = 0.6; // Volumen opcional
+      audio.play().catch(e => {
+        alert("El navegador no permite reproducir música automáticamente. Tocá de nuevo.");
+      });
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
